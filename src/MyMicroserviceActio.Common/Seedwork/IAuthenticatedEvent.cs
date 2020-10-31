@@ -1,6 +1,6 @@
 ﻿namespace MyMicroserviceActio.Common.SeedWork
 {
-    public interface IAuthenticatedEvent
+    public interface IAuthenticatedEvent : IEvent
     {
     }
 }
