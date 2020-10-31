@@ -9,6 +9,7 @@ namespace MyMicroserviceActio.Common.Events
         public string Reason { get; }
         public string Code { get; }
 
+        //support serilizer
         protected CreateActivityRejected()
         {
         }

@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Commands\**" />
-    <Compile Remove="Events\**" />
-    <EmbeddedResource Remove="Commands\**" />
-    <EmbeddedResource Remove="Events\**" />
-    <None Remove="Commands\**" />
-    <None Remove="Events\**" />
+    <Compile Remove="Commands\AuthenticateUser.cs" />
+    <Compile Remove="Commands\CreateUser.cs" />
+    <Compile Remove="Events\AuthenticateUserRejected.cs" />
+    <Compile Remove="Events\CreateUserRejected.cs" />
+    <Compile Remove="Events\UserAuthenticated.cs" />
+    <Compile Remove="Events\UserCreated.cs" />
+    <Compile Remove="Seedwork\IAuthenticatedCommand.cs" />
+    <Compile Remove="Seedwork\IAuthenticatedEvent.cs" />
   </ItemGroup>
 
   <ItemGroup>

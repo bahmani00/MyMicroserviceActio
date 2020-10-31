@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyMicroserviceActio.Common.Commands;
 using MyMicroserviceActio.Common.RabbitMq;
+using MyMicroserviceActio.Common.SeedWork;
+using MyMicroserviceActio.Services.Activities.Handlers;
 
 namespace MyMicroserviceActio.Services.Activities
 {
@@ -21,6 +24,7 @@ namespace MyMicroserviceActio.Services.Activities
         {
             services.AddControllers();
             services.AddRabbitMq(Configuration);
+            services.AddScoped<ICommandHandler<CreateActivity>, CreateActivityHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

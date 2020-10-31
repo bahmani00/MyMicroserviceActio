@@ -8,6 +8,7 @@ namespace MyMicroserviceActio.Common.Events
         public string Code { get; }
         public string Reason { get; }
 
+        //support serilizer
         protected AuthenticateUserRejected()
         {
         }

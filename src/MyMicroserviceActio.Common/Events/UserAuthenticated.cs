@@ -6,6 +6,7 @@ namespace MyMicroserviceActio.Common.Events
     {
         public string Email { get; }
 
+        //support serilizer
         protected UserAuthenticated()
         {
         }

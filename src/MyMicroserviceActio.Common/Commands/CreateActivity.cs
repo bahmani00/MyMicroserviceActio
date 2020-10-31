@@ -3,7 +3,7 @@ using System;
 
 namespace MyMicroserviceActio.Common.Commands
 {
-    public class CreateActivity : IAuthenticatedCommand
+    public class CreateActivity : ICommand
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }

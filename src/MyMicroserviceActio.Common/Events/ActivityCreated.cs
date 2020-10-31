@@ -3,7 +3,7 @@ using System;
 
 namespace MyMicroserviceActio.Common.Events
 {
-    public class ActivityCreated : IAuthenticatedEvent
+    public class ActivityCreated : IEvent
     {
         public Guid Id { get; }
         public Guid UserId { get; }
@@ -12,6 +12,7 @@ namespace MyMicroserviceActio.Common.Events
         public string Description { get; }
         public DateTime CreatedAt { get; }
 
+        //support serilizer
         protected ActivityCreated()
         {
         }
