@@ -1,5 +1,5 @@
 
-# DDD implementation of Snack Machine
+# Microservice & DDD implementation of Activity App
 
 ## Overview
 
