@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyMicroserviceActio.Common.Commands;
+using MyMicroserviceActio.Common.Mongo;
 using MyMicroserviceActio.Common.RabbitMq;
 using MyMicroserviceActio.Common.SeedWork;
 using MyMicroserviceActio.Services.Activities.Handlers;
@@ -24,6 +25,7 @@ namespace MyMicroserviceActio.Services.Activities
         {
             services.AddControllers();
             services.AddRabbitMq(Configuration);
+            services.AddMongoDB(Configuration);
             services.AddScoped<ICommandHandler<CreateActivity>, CreateActivityHandler>();
         }
 
