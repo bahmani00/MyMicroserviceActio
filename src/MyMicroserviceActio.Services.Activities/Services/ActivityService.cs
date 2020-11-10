@@ -27,8 +27,10 @@ namespace MyMicroserviceActio.Services.Activities.Services
                 throw new ActioException("category_not_found", 
                     $"Category: '{category}' was not found.");
             }
+
             var activity = new Activity(id, activityCategory, userId,
                 name, description, createdAt);
+
             await _activityRepository.AddAsync(activity);
         }
     }
