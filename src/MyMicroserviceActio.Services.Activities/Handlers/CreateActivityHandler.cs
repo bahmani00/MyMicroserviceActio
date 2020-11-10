@@ -6,6 +6,7 @@ using RawRabbit;
 using MyMicroserviceActio.Common.SeedWork;
 using MyMicroserviceActio.Services.Activities.Services;
 using MyMicroserviceActio.Common.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace MyMicroserviceActio.Services.Activities.Handlers
 {
@@ -13,16 +14,20 @@ namespace MyMicroserviceActio.Services.Activities.Handlers
     {
         private readonly IBusClient _busClient;
         private readonly IActivityService _activityService;
+        private readonly ILogger<CreateActivityHandler> logger;
 
-        public CreateActivityHandler(IBusClient busClient, IActivityService activityService)
+        public CreateActivityHandler(IBusClient busClient, 
+            IActivityService activityService,
+            ILogger<CreateActivityHandler> logger)
         {
             _busClient = busClient;
             _activityService = activityService;
+            this.logger = logger;
         }
 
         public async Task HandleAsync(CreateActivity command)
         {
-            Console.WriteLine($"Creating activity: '{command.Id}' for user: '{command.UserId}'.");
+            logger.LogInformation($"Creating activity: '{command.Id}' for user: '{command.UserId}'.");
             try {
 
                 await _activityService.AddAsync(command.Id, command.UserId, command.Category,
@@ -34,9 +39,14 @@ namespace MyMicroserviceActio.Services.Activities.Handlers
             } catch (ActioException ex) {
                 await _busClient.PublishAsync(new CreateActivityRejected(command.Id,
                     ex.Message, ex.Code));
+
+                logger.LogError(ex, null, null);
+
             } catch (Exception ex) {
                 await _busClient.PublishAsync(new CreateActivityRejected(command.Id,
                     ex.Message, "error"));
+
+                logger.LogError(ex, null, null);
             }
         }
     }
