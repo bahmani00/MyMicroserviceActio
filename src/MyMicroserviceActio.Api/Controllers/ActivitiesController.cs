@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyMicroserviceActio.Common.Commands;
 using RawRabbit;
 using System;
@@ -7,6 +9,7 @@ using System.Threading.Tasks;
 namespace MyMicroserviceActio.Api.Controllers
 {
     [Route("[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ActivitiesController: Controller
     {
         private readonly IBusClient _busClient;
