@@ -11,7 +11,6 @@ namespace MyMicroserviceActio.Services.Identity.Domain.Services
 
         public string GetSalt()
         {
-            var random = new Random();
             var saltBytes = new byte[SaltSize];
             var rng = RandomNumberGenerator.Create();
             rng.GetBytes(saltBytes);
