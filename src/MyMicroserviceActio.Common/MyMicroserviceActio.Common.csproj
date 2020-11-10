@@ -6,11 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="Commands\AuthenticateUser.cs" />
-    <Compile Remove="Commands\CreateUser.cs" />
     <Compile Remove="Events\AuthenticateUserRejected.cs" />
-    <Compile Remove="Events\CreateUserRejected.cs" />
     <Compile Remove="Events\UserAuthenticated.cs" />
-    <Compile Remove="Events\UserCreated.cs" />
     <Compile Remove="Seedwork\IAuthenticatedCommand.cs" />
     <Compile Remove="Seedwork\IAuthenticatedEvent.cs" />
   </ItemGroup>
