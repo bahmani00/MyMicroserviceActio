@@ -1,5 +1,6 @@
 using System;
 using MyMicroserviceActio.Common.Exceptions;
+using MyMicroserviceActio.Services.Identity.Domain.Services;
 
 namespace MyMicroserviceActio.Services.Identity.Domain.Models
 {
@@ -35,5 +36,18 @@ namespace MyMicroserviceActio.Services.Identity.Domain.Models
             CreatedAt = DateTime.UtcNow;
         }
 
+        public void SetPassword(string password, IEncrypter encrypter)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                throw new ActioException("empty_password", 
+                    "Password can not be empty.");
+            }             
+            Salt = encrypter.GetSalt();
+            Password = encrypter.GetHash(password, Salt);
+        }
+
+        public bool ValidatePassword(string password, IEncrypter encrypter)
+            => Password.Equals(encrypter.GetHash(password, Salt));
     }
 }

@@ -3,7 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyMicroserviceActio.Common.Mongo;
 using MyMicroserviceActio.Common.RabbitMq;
+using MyMicroserviceActio.Services.Identity.Domain.Repositories;
+using MyMicroserviceActio.Services.Identity.Domain.Services;
+using MyMicroserviceActio.Services.Identity.Repositories;
 
 namespace MyMicroserviceActio.Services.Identity
 {
@@ -21,6 +25,9 @@ namespace MyMicroserviceActio.Services.Identity
         {
             services.AddControllers();
             services.AddRabbitMq(Configuration);
+            services.AddMongoDB(Configuration);
+            services.AddSingleton<IEncrypter, Encrypter>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
