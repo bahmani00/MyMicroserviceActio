@@ -1,11 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\MyMicroserviceActio.Common\MyMicroserviceActio.Common.csproj" />
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\MyMicroserviceActio.Common\MyMicroserviceActio.Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

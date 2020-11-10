@@ -15,7 +15,8 @@ namespace MyMicroserviceActio.Api.Controllers
             _busClient = busClient;
         }
 
-        [HttpPost("")]
+        //Register User
+        [HttpPost("register")]
         public async Task<IActionResult> Post([FromBody]CreateUser command)
         {
             await _busClient.PublishAsync(command);

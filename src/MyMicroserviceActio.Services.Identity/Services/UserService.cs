@@ -1,5 +1,5 @@
-using System;
 using System.Threading.Tasks;
+using MyMicroserviceActio.Common.Auth;
 using MyMicroserviceActio.Common.Exceptions;
 using MyMicroserviceActio.Services.Identity.Domain.Models;
 using MyMicroserviceActio.Services.Identity.Domain.Repositories;
@@ -11,12 +11,15 @@ namespace MyMicroserviceActio.Services.Identity.Services
     {
         private readonly IUserRepository _repository;
         private readonly IEncrypter _encrypter;
+        private readonly IJwtHandler jwtHandler;
 
         public UserService(IUserRepository repository,
-            IEncrypter encrypter)
+            IEncrypter encrypter,
+            IJwtHandler jwtHandler)
         {
             _repository = repository;
             _encrypter = encrypter;
+            this.jwtHandler = jwtHandler;
         }
 
         public async Task RegisterAsync(string email, string password, string name)
@@ -32,7 +35,7 @@ namespace MyMicroserviceActio.Services.Identity.Services
             await _repository.AddAsync(user);
         }
 
-        public async Task LoginAsync(string email, string password)
+        public async Task<JsonWebToken> LoginAsync(string email, string password)
         {
             var user = await _repository.GetAsync(email);
             if (user == null)
@@ -45,6 +48,8 @@ namespace MyMicroserviceActio.Services.Identity.Services
                 throw new ActioException("invalid_credentials",
                     $"Invalid credentials.");
             }
+
+            return jwtHandler.Create(user.Id);
         }
     }
 }
