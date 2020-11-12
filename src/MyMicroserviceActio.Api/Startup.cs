@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyMicroserviceActio.Api.Repositories;
 using MyMicroserviceActio.Common.Auth;
 using MyMicroserviceActio.Common.Events;
+using MyMicroserviceActio.Common.Mongo;
 using MyMicroserviceActio.Common.RabbitMq;
 using MyMicroserviceActio.Common.SeedWork;
 
@@ -23,10 +25,12 @@ namespace MyMicroserviceActio.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMongoDB(Configuration);
             services.AddRabbitMq(Configuration);
             services.AddJwt(Configuration);
 
             services.AddScoped<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
