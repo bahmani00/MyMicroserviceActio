@@ -1,9 +1,8 @@
-using MyMicroserviceActio.Common.SeedWork;
 using System;
 
-namespace MyMicroserviceActio.Common.Commands
+namespace MyMicroserviceActio.Api.Models
 {
-    public class CreateActivity : IAuthenticatedCommand
+    public class Activity
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }

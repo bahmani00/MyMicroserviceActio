@@ -5,17 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Commands\AuthenticateUser.cs" />
-    <Compile Remove="Events\AuthenticateUserRejected.cs" />
-    <Compile Remove="Events\UserAuthenticated.cs" />
-    <Compile Remove="Seedwork\IAuthenticatedCommand.cs" />
-    <Compile Remove="Seedwork\IAuthenticatedEvent.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.0" />
+    
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.0" />
+    
     <PackageReference Include="MongoDb.Driver" Version="2.11.4" />
     
     <PackageReference Include="RawRabbit" Version="2.0.0-beta8" />
