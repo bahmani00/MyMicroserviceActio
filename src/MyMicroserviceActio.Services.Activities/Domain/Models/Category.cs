@@ -15,6 +15,11 @@ namespace MyMicroserviceActio.Services.Activities.Domain.Models
         {
             Id = Guid.NewGuid();
             Name = name.ToLowerInvariant();
-        }      
+        }
+        public Category(Guid id, string name)
+        {
+            Id = id;
+            Name = name.ToLowerInvariant();
+        }
     }
 }
