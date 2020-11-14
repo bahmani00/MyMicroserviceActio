@@ -60,42 +60,42 @@ namespace MyMicroserviceActio.Api.Tests.Unit.Controllers
             contentResult.Should().NotBeNull();
         }
 
-        [Fact]
-        public async Task activities_controller_getById_should_return_Unauthorized()
-        {
-            var userId = Guid.Empty;
-            controller.ControllerContext = new ControllerContext {
-                HttpContext = new DefaultHttpContext {
-                    User = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
-                                    {
-                            new Claim(ClaimTypes.Name, userId.ToString())
-                                    }, "test"))
-                }
-            };
+        //[Fact]
+        //public async Task activities_controller_getById_should_return_Unauthorized()
+        //{
+        //    var userId = Guid.Empty;
+        //    controller.ControllerContext = new ControllerContext {
+        //        HttpContext = new DefaultHttpContext {
+        //            User = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
+        //                            {
+        //                    new Claim(ClaimTypes.Name, userId.ToString())
+        //                            }, "test"))
+        //        }
+        //    };
 
-            var result = await controller.Get(Constants.ActivityId_Admin);
+        //    var result = await controller.Get(Constants.ActivityId_Admin);
 
-            var contentResult = result as UnauthorizedResult;
-            contentResult.Should().NotBeNull();
-        }
+        //    var contentResult = result as UnauthorizedResult;
+        //    contentResult.Should().NotBeNull();
+        //}
 
-        [Fact]
-        public async Task activities_controller_getById_should_return_Activity()
-        {
-            var userId = Constants.UserId_Admin;
-            controller.ControllerContext = new ControllerContext {
-                HttpContext = new DefaultHttpContext {
-                    User = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
-                        {
-                                new Claim(ClaimTypes.Name, userId.ToString())
-                        }, "test"))
-                }
-            };
+        //[Fact]
+        //public async Task activities_controller_getById_should_return_Activity()
+        //{
+        //    var userId = Constants.UserId_Admin;
+        //    controller.ControllerContext = new ControllerContext {
+        //        HttpContext = new DefaultHttpContext {
+        //            User = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
+        //                {
+        //                        new Claim(ClaimTypes.Name, userId.ToString())
+        //                }, "test"))
+        //        }
+        //    };
 
-            var result = await controller.Get(Constants.ActivityId_Admin);
+        //    var result = await controller.Get(Constants.ActivityId_Admin);
 
-            var contentResult = result as OkResult;
-            contentResult.Should().NotBeNull();
-        }
+        //    var contentResult = result as OkResult;
+        //    contentResult.Should().NotBeNull();
+        //}
     }
 }
