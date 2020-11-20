@@ -5,7 +5,7 @@ using MyMicroserviceActio.Api.Controllers;
 using System.Linq;
 using Xunit;
 
-namespace MyMicroserviceActio.Api.Tests.Unit.Controllers
+namespace MyMicroserviceActio.Api.Tests.Unit
 {
     public class HomeControllerTests
     {
@@ -16,7 +16,7 @@ namespace MyMicroserviceActio.Api.Tests.Unit.Controllers
             var controller = new WeatherForecastController(logger.Object);
 
             var result = controller.Get();
-            
+
             result.Should().NotBeNull();
             result.Count().Should().Be(5);
         }

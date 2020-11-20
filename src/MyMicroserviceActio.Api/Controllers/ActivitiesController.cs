@@ -30,7 +30,6 @@ namespace MyMicroserviceActio.Api.Controllers
             commad.CreatedAt = DateTime.UtcNow;
             commad.UserId = Guid.Parse(User.Identity.Name);
             await _busClient.PublishAsync(commad);
-
             return Accepted($"activities/{commad.Id}");
         }
 

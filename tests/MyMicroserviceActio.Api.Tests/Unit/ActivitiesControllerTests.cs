@@ -12,7 +12,7 @@ using RawRabbit;
 using Xunit;
 using MyMicroserviceActio.Common.Services;
 
-namespace MyMicroserviceActio.Api.Tests.Unit.Controllers
+namespace MyMicroserviceActio.Api.Tests.Unit
 {
     public class ActivitiesControllerTests
     {

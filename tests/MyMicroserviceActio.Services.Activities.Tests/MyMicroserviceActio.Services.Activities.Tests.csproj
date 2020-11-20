@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\..\src\MyMicroserviceActio.Api\appsettings.json" Link="appsettings.json">
+    <Content Include="..\..\src\MyMicroserviceActio.Services.Activities\appsettings.json" Link="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -18,11 +18,9 @@
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.0" />
     <PackageReference Include="Moq" Version="4.7.142" />
     <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />  
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyMicroserviceActio.Api\MyMicroserviceActio.Api.csproj" />
+    <ProjectReference Include="..\..\src\MyMicroserviceActio.Services.Activities\MyMicroserviceActio.Services.Activities.csproj" />
   </ItemGroup>
-
 </Project>

@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C11A3FBC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMicroserviceActio.Api.Tests", "tests\MyMicroserviceActio.Api.Tests\MyMicroserviceActio.Api.Tests.csproj", "{F21884A5-111D-427D-AD8A-8908F633C181}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMicroserviceActio.Services.Activities.Tests", "tests\MyMicroserviceActio.Services.Activities.Tests\MyMicroserviceActio.Services.Activities.Tests.csproj", "{F9F61032-953E-42BC-B71F-C65B81691650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,18 @@ Global
 		{F21884A5-111D-427D-AD8A-8908F633C181}.Release|x64.Build.0 = Release|Any CPU
 		{F21884A5-111D-427D-AD8A-8908F633C181}.Release|x86.ActiveCfg = Release|Any CPU
 		{F21884A5-111D-427D-AD8A-8908F633C181}.Release|x86.Build.0 = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|x64.Build.0 = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Debug|x86.Build.0 = Debug|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|x64.ActiveCfg = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|x64.Build.0 = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|x86.ActiveCfg = Release|Any CPU
+		{F9F61032-953E-42BC-B71F-C65B81691650}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83220A5D-EB13-4932-8719-662796CB033F} = {213D12E9-3BC6-4768-A618-2CD80696B585}
@@ -97,5 +111,6 @@ Global
 		{CBF9B2B8-EA05-46D7-A186-D257FB420961} = {213D12E9-3BC6-4768-A618-2CD80696B585}
 		{80FF3555-DAA9-4EA0-ADBB-6B793A1F65E1} = {213D12E9-3BC6-4768-A618-2CD80696B585}
 		{F21884A5-111D-427D-AD8A-8908F633C181} = {C11A3FBC-93EF-411F-985A-A35612C5428C}
+		{F9F61032-953E-42BC-B71F-C65B81691650} = {C11A3FBC-93EF-411F-985A-A35612C5428C}
 	EndGlobalSection
 EndGlobal
