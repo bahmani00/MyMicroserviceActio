@@ -30,7 +30,7 @@ namespace MyMicroserviceActio.Api
             services.AddMongoDB(Configuration);
             services.AddRabbitMq(Configuration);
             services.AddJwt(Configuration);
-            AddSwagger(services, Configuration);
+            //AddSwagger(services, Configuration);
 
             services.AddScoped<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
             services.AddScoped<IActivityRepository, ActivityRepository>();
@@ -56,18 +56,18 @@ namespace MyMicroserviceActio.Api
             });
 
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            //// Enable middleware to serve generated Swagger as a JSON endpoint.
+            //app.UseSwagger();
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Actio Api Gateway v.1");
+            //// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            //// specifying the Swagger JSON endpoint.
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyMicroserviceActio Api Gateway v.1");
 
-                // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
-                c.RoutePrefix = string.Empty;
-            });
+            //    // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
+            //    c.RoutePrefix = string.Empty;
+            //});
 
 
         }
@@ -77,7 +77,7 @@ namespace MyMicroserviceActio.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {
-                    Title = "Actio Api Gateway",
+                    Title = "MyMicroserviceActio Api Gateway",
                     Version = "v1",
                     Description = "Description for the API goes here."
                 });
