@@ -6,7 +6,7 @@ using MyMicroserviceActio.Services.Activities.Services;
 using Moq;
 using Xunit;
 
-namespace MyMicroserviceActio.Services.Activities.Tests.Unit.Services
+namespace MyMicroserviceActio.Services.Activities.Tests.Unit
 {
     public class ActivityServiceTests
     {
@@ -22,7 +22,7 @@ namespace MyMicroserviceActio.Services.Activities.Tests.Unit.Services
                 categoryRepositoryMock.Object);
 
             var id = Guid.NewGuid();
-            await activityService.AddAsync(id, Guid.NewGuid(), category, "activity", 
+            await activityService.AddAsync(id, Guid.NewGuid(), category, "activity",
                 "description", DateTime.UtcNow);
 
             categoryRepositoryMock.Verify(x => x.GetAsync(category), Times.Once);
